@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalculadoraBasic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .operacion {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        input {
+            margin: 5px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>CALCULADORA BASICA</h1>
+    
+    <h2>Funcionamiento de una calculadora</h2>
+    
+    <div>
+        <span class="operacion" onclick="calcular('suma')">SUMA</span> <br>
+        <span class="operacion" onclick="calcular('resta')">RESTA</span> <br>
+        <span class="operacion" onclick="calcular('multiplicacion')">MULTIPLICACION</span> <br>
+        <span class="operacion" onclick="calcular('division')">DIVISION</span>
+    </div>
+        <br>
+    <div>
+        <label>Número 1:</label>
+        <input type="number" id="numero1">
+        
+        <label>Número 2:</label>
+        <input type="number" id="numero2">
+    </div>
+    
+    <p>El resultado es: <span id="resultado">1</span></p>
+
+    <script>
+        function calcular(operacion) {
+            let num1 = parseFloat(document.getElementById("numero1").value);
+            let num2 = parseFloat(document.getElementById("numero2").value);
+            let resultado = 0;
+            
+            switch(operacion) {
+                case 'suma':
+                    resultado = num1 + num2;
+                    break;
+                case 'resta':
+                    resultado = num1 - num2;
+                    break;
+                case 'multiplicacion':
+                    resultado = num1 * num2;
+                    break;
+                case 'division':
+                    if(num2 !== 0) {
+                        resultado = num1 / num2;
+                    } else {
+                        alert("Imposible XDD");
+                        return;
+                    }
+                    break;
+            }
+            
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+</html>

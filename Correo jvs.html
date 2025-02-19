@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sem 5, 1</title>
+    <style>
+        .formulario {
+            width: 225px;
+            border: 4px solid black;
+            padding: 14px;
+            margin: 14px;
+        }
+        input {
+            margin: 5px 0;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="formulario">
+        <form id="miFormulario">
+            <label for="correo">Correo</label>
+            <input type="text" id="correo" name="correo">
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            
+            <input type="button" value="Enviar" onclick="mostrarDatos()">
+        </form>
+    </div>
+
+    <script>
+        function mostrarDatos() {
+            var correo = document.getElementById("correo").value;
+            var password = document.getElementById("password").value;
+            var mensaje = "Correo: " + correo + "\nPassword: " + password;
+            alert(mensaje);
+        }
+    </script>
+</body>
+</html>
